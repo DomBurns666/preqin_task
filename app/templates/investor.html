@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investor Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Investor Details</h1>
+        <p>Firm ID: <span id="firm-id">{{ firm_id }}</span></p>
+        <div class="input-field">
+            <select id="investment-type">
+                <option value="" disabled selected>Choose your investment type</option>
+                <option value="pe">Private Equity</option>
+                <option value="pd">Private Debt</option>
+                <option value="re">Real Estate</option>
+                <option value="inf">Infrastructure</option>
+                <option value="nr">Natural Resources</option>
+                <option value="hf">Hedge Funds</option>
+            </select>
+        </div>
+
+        <table id="commitment-table" class="striped">
+            <thead>
+                <tr>
+                    <th>Currency</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody id="commitment-table-body">
+            </tbody>
+        </table>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/investor.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems, {});
+        });
+    </script>
+</body>
+</html>

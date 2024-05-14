@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investors Table</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.css') }}">
+    <style>
+        .container {
+            padding-left: 20px; /* Adjust as needed */
+            padding-right: 20px; /* Adjust as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Investors Table</h1>
+        <table id="investors-table" class="striped">
+            <thead>
+                <tr>
+                    <th>FirmId</th>
+                    <th>Firm Name</th>
+                    <th>Type</th>
+                    <th>DateAdded</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody id="investors-table-body">
+            </tbody>
+        </table>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
